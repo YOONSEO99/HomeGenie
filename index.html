@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <meta charset="UTF-8">
+        <title>HomeGenie - Your Wish, Your Home</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="app">
+            <section id="login-page" class="page hidden">
+                <div class="container">
+                    <h1>Home Genie</h1>
+                    <p>"your Wish, your Home</p>
+                    <div class="auth-form">
+                        <input type="text" id="login-id" placeholder="input your ID">
+                        <input type="password" id="login-pw" placeholder="input your PW">
+                        <button id="btn-login" class="btn-mint">Login</button>
+                        <p>Aren't you a member yet? <span class="link">Sign Up</span></p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="signup-page" class="page hidden">
+
+            </section>
+
+            <section id="main-1" class="page">
+                <nav>
+                    <div class="profile-arrow">>></div>
+                </nav>
+                <h1>Home Genie</h1>
+                <p>"your Wish, your Home</p>
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Tell Me Your Wish (Location)">
+                    <button id="btn-search">🔎</button>
+                </div>
+                <div class="map-container">
+                    <div class="map"></div>
+                </div>
+                <div class="filter-group">
+                    <h3>FILTER</h3>
+                    <div class="filter-row">
+                        <span>Price</span>
+                        <button class="filter-tag">~$900</button>
+                        <button class="filter-tag">~$1200</button>
+                        <button class="filter-tag">~$1500</button>
+                        <button class="filter-tag">~$1700</button>
+                        <button class="filter-tag">~$2000</button>
+                        <button class="filter-tag">$2000~</button>
+                    </div>
+                    <div class="filter-row">
+                        <span>Mood</span>
+                        <button class="filter-tag">cozy</button>
+                        <button class="filter-tag">modern</button>
+                        <button class="filter-tag">nature</button>
+                        <button class="filter-tag">ocean</button>
+                        <button class="filter-tag">mountain</button>
+                        <button class="filter-tag">cool</button>
+                        <button class="filter-tag">cute</button>
+                        <button class="filter-tag">chic</button>
+                        <button class="filter-tag">park</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="main-2" class="page hidden">
+                <nav>
+                    <div class="profile-arrow">>></div>
+                </nav>
+                <h1>Home Genie</h1>
+                <p>"your Wish, your Home"</p>
+                <div></div>
+
+            </section>
+            
+            <section id="profile" class="page hidden">
+
+            </section>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
