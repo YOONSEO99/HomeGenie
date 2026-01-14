@@ -1,4 +1,4 @@
-# 🧞‍♂️ HomeGenie (홈지니)
+# 🧞‍♂️ HomeGenie
 > **"Granting your wish for the perfect home in Vancouver."**
 
 ## 🏠 Project Overview
