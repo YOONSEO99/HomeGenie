@@ -20,4 +20,3 @@
 * **API:** Google Maps API (or Leaflet.js)
 * **Database:** LocalStorage (Client-side)
 * **Tools:** GitHub (Version Control & Ticket Management)
->>>>>>> 8a592cf (feat: complete day 1 UI design (login, signup, main pages, and nav-bar))
