@@ -20,10 +20,4 @@
 * **API:** Google Maps API (or Leaflet.js)
 * **Database:** LocalStorage (Client-side)
 * **Tools:** GitHub (Version Control & Ticket Management)
-
-## 🏗 Development Plan
-- **Day 1:** Basic UI Layout & SPA Navigation Logic
-- **Day 2:** Map API Integration & Data Visualization
-- **Day 3:** Advanced Filtering & Search Logic
-- **Day 4:** Recommendation Algorithm & Interaction
-- **Day 5:** UI Refinement, LocalStorage Integration & Final Bug Fixes
+>>>>>>> 8a592cf (feat: complete day 1 UI design (login, signup, main pages, and nav-bar))

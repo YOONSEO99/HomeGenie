@@ -1,0 +1,593 @@
+/* Global Styles & Background */
+body {
+    /* Magic night sky gradient for Aladdin theme */
+    background: linear-gradient(180deg, #1a0a2e 0%, #121212 100%);
+    /* Fix background during scroll for smooth visual effect */
+    background-attachment: fixed;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+button {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Glassmorphism Effect for Containers and Cards */
+.container,
+.flat-detail,
+.rent-detail,
+.wish-detail,
+.not-detail,
+.edit-container,
+.new-container {
+    /* 5% translucent white background */
+    background: rgba(255, 255, 255, 0.05);
+    /* Native CSS function to blur the background behind the element */
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    /* Semi-transparent mint border for subtle glowing effect */
+    border: 1px solid rgba(100, 255, 218, 0.3);
+}
+
+/* Design Tokens & Variables */
+:root {
+    --mint-point: #64ffda;
+}
+
+/* Interactive Elements: Mint Button Style */
+.btn-mint {
+    background-color: var(--mint-point);
+    /* Outer glow effect to represent Genie's magic */
+    box-shadow: 0 0 10px var(--mint-point);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease;
+    align-self: center;
+    width: 150px;
+    height: 30px;
+    margin: 10px;
+}
+
+/* Button Hover State */
+.btn-mint:hover {
+    /* Intensify glow on hover */
+    box-shadow: 0 0 20px var(--mint-point);
+    transform: translateY(-2px);
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#header {
+    margin-top: 70px;
+}
+
+/* Logo Text Style */
+#header h1 {
+    /* Modern & Bold font recommended */
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+
+    /* 1. Magic Gradient Text: Making the text itself a gradient */
+    background: linear-gradient(90deg, #64ffda, #00bfa5, #64ffda);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* 2. Neon Glow Effect: Making it look like magic energy */
+    text-shadow: 0 0 10px rgba(100, 255, 218, 0.5),
+        0 0 20px rgba(100, 255, 218, 0.3);
+
+    /* 3. Animation: Making the gradient flow like magic smoke */
+    animation: shine 3s linear infinite;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+/* Slogan Style */
+#header p {
+    color: #b0b0b0;
+    /* font-style: italic; */
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.profile-arrow {
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--mint-point);
+    transition: 0.3s;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+#nav-bar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 250px;
+    height: 100vh;
+    background: rgba(26, 10, 46, 0.95);
+    backdrop-filter: blur(15px);
+    z-index: 999;
+    transition: 0.4s ease;
+    padding: 50px 20px;
+    border-right: 1px solid var(--mint-point);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#nav-bar.active {
+    left: 0;
+}
+
+.nav-welcome {
+    color: var(--mint-point);
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.nav-ment {
+    font-size: 0.8rem;
+    color: #b0b0b0;
+    margin-bottom: 30px;
+}
+
+.nav-link {
+    width: 100%;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    padding: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-link:hover {
+    color: var(--mint-point);
+    background: rgba(100, 255, 218, 0.05);
+}
+
+.logout {
+    color: #ff5252 !important;
+    border: 1px solid rgba(255, 82, 82, 0.3);
+    background: rgba(255, 82, 82, 0.05);
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-top: 300px;
+    transition: 0.3s;
+}
+
+.logout:hover {
+    background: rgba(255, 82, 82, 0.2);
+    box-shadow: 0 0 15px rgba(255, 82, 82, 0.4);
+    transform: scale(1.05);
+}
+
+/* Animation for the flowing gradient */
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+#login-page,
+#signup-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3vh;
+}
+
+#login-page h1,
+#signup-page h1 {
+    color: whitesmoke;
+}
+
+
+.container {
+    width: 90%;
+    height: auto;
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 40px;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.auth-form input {
+    width: 100%;
+    height: 25px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.auth-form input:focus {
+    outline: none;
+    border: 1px solid var(--mint-point);
+    box-shadow: 0 0 10px var(--mint-point);
+}
+
+.auth-form label {
+    font-size: 13px;
+}
+
+.auth-form p {
+    margin-top: 30px;
+    font-size: small;
+    text-align: center;
+}
+
+.link,
+.nav-welcome {
+    color: var(--mint-point);
+    cursor: pointer;
+}
+
+.nav-welcome {
+    margin-bottom: 5px;
+}
+
+#nav-bar p {
+    margin-bottom: 100px;
+}
+
+.search-bar,
+.filter-group,
+.flat-header,
+.flat-container,
+.rent-header,
+.rent-container,
+.wish-header,
+.wish-container,
+.not-header,
+.not-container,
+.next-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.filter-group,
+.flat-container,
+.rent-container,
+.wish-container,
+.not-container {
+    flex-direction: column;
+}
+
+.search-bar input {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(100, 255, 218, 0.3);
+    color: white;
+    outline: none;
+    height: 25px;
+    flex: 1;
+    padding: 5px 5px;
+}
+
+.btn-search,
+#refresh-btn,
+#new-btn,
+#wish-next-btn,
+#not-next-btn,
+.next-btn {
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    filter: drop-shadow(0 0 0px var(--mint-point));
+}
+
+.btn-search:hover,
+#refresh-btn:hover,
+#new-btn:hover,
+#wish-next-btn:hover,
+#not-next-btn:hover,
+.next-btn:hover {
+    transform: scale(1.3) rotate(15deg);
+    filter: drop-shadow(0 0 10px var(--mint-point)) brightness(1.2);
+}
+
+.map-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.map {
+    width: 70%;
+    height: 450px;
+    margin: 30px 0;
+    border-radius: 20px;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5),
+        inset 0 0 15px rgba(100, 255, 218, 0.1);
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90%;
+    max-width: 600px;
+}
+
+.filter-row {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 5px;
+}
+
+.filter-row span {
+    display: inline-flex;
+    align-items: center;
+    min-width: 70px;
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--mint-point);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+.filter-tag {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(100, 255, 218, 0.3);
+    color: white;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-tag:hover {
+    background: var(--mint-point);
+    color: #000;
+    box-shadow: 0 0 10px var(--mint-point);
+}
+
+.flat-header h3,
+.rent-header h3,
+.wish-header h3,
+.not-header h3 {
+    color: var(--mint-point);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 25px;
+}
+
+.flat-detail,
+.rent-detail,
+.wish-detail,
+.not-detail {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    justify-content: flex-start;
+}
+
+.flat-detail:hover,
+.rent-detail:hover,
+.wish-detail:hover,
+.not-detail:hover {
+    transform: translateY(-10px);
+    border-color: var(--mint-point);
+    box-shadow: 0 10px 30px rgba(100, 255, 218, 0.2);
+}
+
+.flat-img,
+.rent-img,
+.wish-img,
+.not-img {
+    width: 100%;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.flat-name,
+.flat-area,
+.flat-filter,
+.rent-name,
+.rent-area,
+.rent-filter,
+.wish-name,
+.wish-area,
+.wish-filter,
+.not-name,
+.not-area,
+.not-filter {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.btn-option {
+    display: flex;
+    width: 100%;
+    margin-top: 15px;
+    justify-content: space-between;
+}
+
+.flat-detail button,
+.rent-detail button,
+.wish-detail button,
+.not-detail button {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-right: 10px;
+}
+
+.flat-like:hover,
+.rent-update:hover,
+.add-wish:hover {
+    border-color: var(--mint-point);
+    background: rgba(255, 64, 129, 0.1);
+}
+
+.flat-block:hover,
+.rent-remove:hover,
+.remove-wish:hover {
+    border-color: #ff5252;
+    background: rgba(255, 82, 82, 0.1);
+}
+
+/* 1. 모달 전체 배경 (화면 꽉 채우기) */
+#new-rent-modal,
+#edit-rent-modal,
+#edit-profile-modal {
+    position: fixed;
+    /* 화면에 고정 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    /* 배경을 더 어둡게 해서 집중도 UP */
+    backdrop-filter: blur(8px);
+    /* 뒤쪽 화면 흐릿하게 */
+    z-index: 2000;
+    /* 제일 위에 뜨도록 */
+    display: flex;
+    align-items: center;
+    /* 수직 중앙 */
+    justify-content: center;
+    /* 수평 중앙 */
+}
+
+/* 2. 모달 내부 컨테이너 */
+.new-container,
+.edit-container {
+    width: 90%;
+    max-width: 450px;
+    padding: 30px;
+    max-height: 80vh;
+    /* 화면보다 커지지 않게 */
+    overflow-y: auto;
+    /* 내용 많으면 스크롤 */
+    /* Glassmorphism 효과는 기존 클래스에서 자동 적용됨 */
+}
+
+/* 3. 모달 내 레이블 & 인풋 배치 */
+.new-container label,
+.edit-container label {
+    display: block;
+    font-size: 12px;
+    color: var(--mint-point);
+    margin: 10px 0 5px 5px;
+    text-align: left;
+}
+
+.new-container input,
+.edit-container input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    border-radius: 8px;
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    /* 패딩 때문에 박스 안 커지게 */
+}
+
+/* 4. 파일 업로드 라벨 디테일 */
+.file-label {
+    display: block;
+    background: rgba(100, 255, 218, 0.1);
+    border: 1px dashed var(--mint-point);
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.file-label:hover {
+    background: rgba(100, 255, 218, 0.2);
+}
+
+/* 모달 내 필터 행 간격 미세 조정 */
+.new-container .filter-row, 
+.edit-container .filter-row {
+    margin-top: 10px;
+    gap: 8px; /* 태그들 사이를 조금 더 좁혀서 밀도있게 */
+}
+
+.new-container span, 
+.edit-container span {
+    font-size: 0.75rem;
+}
+
+/* 모달 전용 필터 태그 스타일 (차별화) */
+.new-container .filter-tag, 
+.edit-container .filter-tag {
+    background: rgba(255, 255, 255, 0.03); /* 배경을 더 투명하게 */
+    border: 1px solid rgba(100, 255, 218, 0.15); /* 테두리도 더 연하게 */
+    padding: 4px 12px; /* 크기를 살짝 줄임 */
+    font-size: 0.75rem; /* 폰트 크기 살짝 축소 */
+    font-weight: 500; /* 너무 두꺼운 폰트 대신 중간 두께로 */
+    color: #b0b0b0; /* 기본 상태에서는 차분한 회색 */
+}
+
+/* 선택된 느낌을 줄 때만 민트색으로 활성화 (나중에 JS 연결용) */
+.new-container .filter-tag:hover, 
+.edit-container .filter-tag:hover {
+    color: var(--mint-point);
+    border-color: var(--mint-point);
+    background: rgba(100, 255, 218, 0.05);
+    box-shadow: none; /* 모달에서는 너무 과한 광채는 빼기 */
+}
