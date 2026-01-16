@@ -486,43 +486,34 @@ button {
     background: rgba(255, 82, 82, 0.1);
 }
 
-/* 1. 모달 전체 배경 (화면 꽉 채우기) */
 #new-rent-modal,
 #edit-rent-modal,
 #edit-profile-modal {
     position: fixed;
-    /* 화면에 고정 */
+ 
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.8);
-    /* 배경을 더 어둡게 해서 집중도 UP */
+    
     backdrop-filter: blur(8px);
-    /* 뒤쪽 화면 흐릿하게 */
     z-index: 2000;
-    /* 제일 위에 뜨도록 */
     display: flex;
     align-items: center;
-    /* 수직 중앙 */
     justify-content: center;
-    /* 수평 중앙 */
 }
 
-/* 2. 모달 내부 컨테이너 */
 .new-container,
 .edit-container {
     width: 90%;
     max-width: 450px;
     padding: 30px;
     max-height: 80vh;
-    /* 화면보다 커지지 않게 */
+ 
     overflow-y: auto;
-    /* 내용 많으면 스크롤 */
-    /* Glassmorphism 효과는 기존 클래스에서 자동 적용됨 */
 }
 
-/* 3. 모달 내 레이블 & 인풋 배치 */
 .new-container label,
 .edit-container label {
     display: block;
@@ -541,10 +532,8 @@ button {
     color: white;
     padding: 10px;
     box-sizing: border-box;
-    /* 패딩 때문에 박스 안 커지게 */
 }
 
-/* 4. 파일 업로드 라벨 디테일 */
 .file-label {
     display: block;
     background: rgba(100, 255, 218, 0.1);
@@ -560,11 +549,10 @@ button {
     background: rgba(100, 255, 218, 0.2);
 }
 
-/* 모달 내 필터 행 간격 미세 조정 */
 .new-container .filter-row, 
 .edit-container .filter-row {
     margin-top: 10px;
-    gap: 8px; /* 태그들 사이를 조금 더 좁혀서 밀도있게 */
+    gap: 8px; 
 }
 
 .new-container span, 
@@ -572,22 +560,20 @@ button {
     font-size: 0.75rem;
 }
 
-/* 모달 전용 필터 태그 스타일 (차별화) */
 .new-container .filter-tag, 
 .edit-container .filter-tag {
-    background: rgba(255, 255, 255, 0.03); /* 배경을 더 투명하게 */
-    border: 1px solid rgba(100, 255, 218, 0.15); /* 테두리도 더 연하게 */
-    padding: 4px 12px; /* 크기를 살짝 줄임 */
-    font-size: 0.75rem; /* 폰트 크기 살짝 축소 */
-    font-weight: 500; /* 너무 두꺼운 폰트 대신 중간 두께로 */
-    color: #b0b0b0; /* 기본 상태에서는 차분한 회색 */
+    background: rgba(255, 255, 255, 0.03); 
+    border: 1px solid rgba(100, 255, 218, 0.15); 
+    padding: 4px 12px; 
+    font-size: 0.75rem; 
+    font-weight: 500; 
+    color: #b0b0b0; 
 }
 
-/* 선택된 느낌을 줄 때만 민트색으로 활성화 (나중에 JS 연결용) */
 .new-container .filter-tag:hover, 
 .edit-container .filter-tag:hover {
     color: var(--mint-point);
     border-color: var(--mint-point);
     background: rgba(100, 255, 218, 0.05);
-    box-shadow: none; /* 모달에서는 너무 과한 광채는 빼기 */
+    box-shadow: none; 
 }
