@@ -18,7 +18,7 @@
             <p>"your Wish, your Home"</p>
         </section>
 
-        <section id="header-nav" class="hidden">
+        <section id="header-nav">
             <nav>
                 <div class="profile-arrow">>></div>
             </nav>
@@ -87,7 +87,7 @@
                 </div>
             </div>
             <div class="map-container">
-                <div class="map"></div>
+                <div id="map1" class="map"></div>
             </div>
         </section>
 
@@ -119,7 +119,7 @@
                 </div>
             </div>
             <div class="map-container">
-                <div class="map"></div>
+                <div id="map2" class="map"></div>
             </div>
             <div class="flat-header">
                 <h3>Recommendation</h3>
@@ -128,9 +128,10 @@
             <div class="flat-container">
                 <div class="flat-detail">
                     <img class="flat-img">
-                    <p class="flat-name">Home Name ($1300/month)</p>
-                    <p class="flat-area">Area : 16</p>
-                    <p class="flat-filter">filter : cozy ocean</p>
+                    <p class="flat-name"></p>
+                    <p class="flat-price"></p>
+                    <p class="flat-neighborhood"></p>
+                    <p class="flat-filter">/p>
                     <div class="btn-option">
                         <button class="flat-like">🩵</button>
                         <button class="flat-block">❌</button>
@@ -205,8 +206,8 @@
         </div>
     </section>
 
-    <section id="nav-bar" class="page hidden">
-        <h3 class="nav-welcome">Welcome! Angela</h3>
+    <section id="nav-bar" class="nav-page">
+        <h3 class="nav-welcome"></h3>
         <p class="nav-ment">"your Wish, your Home"</p>
         <button class="nav-link">My Rent List</button>
         <button class="nav-link">My Wish List</button>
@@ -308,8 +309,10 @@
         </div>
     </section>
     </div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWzvZmV79t0InPCvZWKi42RtDxJoNv93E&language=en&callback=initMap" async defer></script>
     <script src="script.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&language=en&callback=initMap"
+        async defer></script>
 </body>
 
 </html>
