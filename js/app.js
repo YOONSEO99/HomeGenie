@@ -1,6 +1,3 @@
-
-const allFilterTags = document.querySelectorAll('.page .filter-tag');
-
 function showRandomFive(data) {
     if (data.length === 0) {
         alert("No results!");
@@ -55,6 +52,7 @@ function search() {
     switchTab('main-2')
     showRandomFive(filteredResults);
 }
+
 
 
 //wishlist > remove button
@@ -160,12 +158,6 @@ function login() {
         alert(`Welcome! ${user.userName}`);
 
         switchTab('main-1');
-        //test
-        // renderListings(listings);
-        // switchTab('main-2');
-        // switchTab('myrentlist');
-        // renderListings(listings);
-
 
         setTimeout(() => {
             initMap();
@@ -411,18 +403,6 @@ function saveProfile() {
 const saveProfileBtn = document.querySelector('#update-profile-btn');
 const cancelProfileBtn = document.querySelector('#cancel-profile-btn');
 
-tags.forEach(tag => {
-    tag.addEventListener('click', () => {
-        tag.classList.toggle('selected');
-    });
-});
-
-editTags.forEach(tag => {
-    tag.addEventListener('click', () => {
-        tag.classList.toggle('selected');
-    });
-});
-
 if (saveNewRent) {
     saveNewRent.addEventListener('click', () => {
         createListing();
@@ -449,11 +429,11 @@ if (editCancelBtn) {
     });
 }
 
-allFilterTags.forEach(tag => {
-    tag.addEventListener('click', () => {
-
-        tag.classList.toggle('selected');
-        console.log("Filter clicked:", tag.textContent, tag.classList.contains('selected'));
+document.querySelectorAll('.filter-tag').forEach(tag => {
+    tag.addEventListener('click', (e) => {
+        e.preventDefault(); 
+        tag.classList.toggle('selected'); 
+        console.log("선택된 무드:", tag.textContent);
     });
 });
 
@@ -483,6 +463,7 @@ if (newRentBtn) {
 if (cancelNewRent) {
     cancelNewRent.addEventListener('click', () => {
         newRentModal.classList.add('hidden');
+        document.querySelectorAll('#new-rent-modal .filter-tag').forEach(t=>t.classList.remove('selected'));
     });
 }
 
