@@ -544,6 +544,7 @@ navLinks.forEach(link => {
         const menuText = e.target.textContent.trim().toLowerCase();
 
         if (menuText.includes("rent")) {
+            resetSearch();
             switchTab('myrentlist');
             renderListings(listings);
         } else if (menuText.includes("wish")) {
@@ -561,5 +562,15 @@ navLinks.forEach(link => {
         if (navBtn) navBtn.textContent=">>";
     });
 });
+
+function resetSearch(){
+    const inputs = document.querySelectorAll('input[type="text"]');
+    inputs.forEach(input => input.value="");
+
+    const selectedTags = document.querySelectorAll('.filter-tag.selected');
+    selectedTags.forEach(tag => tag.classList.remove('selected'));
+
+    console.log("search values reset!");
+}
 
 switchTab('login-page');
