@@ -181,16 +181,70 @@
             </div>
         </section>
 
-        <section id="edit-rent-modal" class="page hidden">...</section>
-        <section id="edit-profile-modal" class="page hidden">...</section>
+        <section id="edit-rent-modal" class="page hidden">
+            <div class="new-container">
+                <h3>Edit My Rent</h3>
+                <label for="edit-img-input" class="file-label">Change Photo 📸</label>
+                <input type="file" id="edit-img-input" accept="image/*" style="display: none;">
+
+                <label>Name</label>
+                <input type="text" id="edit-name" placeholder="Edit rent name">
+
+                <label>Sq ft</label>
+                <input type="text" id="edit-sqft" placeholder="Edit rent sqft">
+
+                <label>Price</label>
+                <input type="text" id="edit-price" placeholder="Edit rent price">
+
+                <label>Neighborhood</label>
+                <input type="text" id="edit-neigh" placeholder="Edit rent neighborhood">
+
+                <div class="filter-row">
+                    <span>Mood</span>
+                    <button class="filter-tag">cozy</button>
+                    <button class="filter-tag">modern</button>
+                    <button class="filter-tag">nature</button>
+                    <button class="filter-tag">ocean</button>
+                </div>
+
+                <button id="create-edit-btn" class="btn-mint">Save Changes</button>
+                <button id="cancel-edit-btn" class="btn-mint">Cancel</button>
+            </div>
+        </section>
+
+        <section id="edit-profile-modal" class="page hidden">
+            <div class="container">
+                <div class="auth-form">
+                    <h3>Edit Profile</h3>
+                    <label>ID (Cannot change)</label>
+                    <input type="text" id="old-id" readonly>
+
+                    <label>New Password</label>
+                    <input type="password" id="new-profile-pw" placeholder="Enter new password">
+
+                    <label>Confirm New Password</label>
+                    <input type="password" id="new-profile-pw-check" placeholder="Confirm new password">
+
+                    <label>Name</label>
+                    <input type="text" id="new-profile-name" placeholder="Enter your name">
+
+                    <label>Birthday</label>
+                    <input type="date" id="new-profile-date">
+
+                    <button id="update-profile-btn" class="btn-mint">Update Profile</button>
+                    <button id="cancel-profile-btn" class="btn-mint">Cancel</button>
+                </div>
+            </div>
+        </section>
 
     </div>
     <script src="js/data.js"></script>
     <script src="js/map.js"></script>
     <script src="js/ui.js"></script>
     <script src="js/app.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&language=en&callback=initMap" async
-        defer></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&language=en&callback=initMap"
+        async defer></script>
 </body>
 
 </html>

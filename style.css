@@ -595,19 +595,18 @@ button {
     box-shadow: none; 
 }
 
-/* 모든 컨테이너의 가로 스크롤바 커스텀 */
 .flat-container::-webkit-scrollbar,
 .rent-container::-webkit-scrollbar,
 .wish-container::-webkit-scrollbar,
 .not-container::-webkit-scrollbar {
-    height: 6px; /* 스크롤바 두께 */
+    height: 6px; 
 }
 
 .flat-container::-webkit-scrollbar-thumb,
 .rent-container::-webkit-scrollbar-thumb,
 .wish-container::-webkit-scrollbar-thumb,
 .not-container::-webkit-scrollbar-thumb {
-    background: var(--mint-point); /* 스크롤바 색상을 민트색으로! */
+    background: var(--mint-point); 
     border-radius: 10px;
 }
 
@@ -615,7 +614,7 @@ button {
 .rent-container::-webkit-scrollbar-track,
 .wish-container::-webkit-scrollbar-track,
 .not-container::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05); /* 트랙은 어둡게 */
+    background: rgba(255, 255, 255, 0.05); 
 }
 
 .explain{
